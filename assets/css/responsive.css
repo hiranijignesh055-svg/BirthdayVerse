@@ -1,0 +1,31 @@
+@media screen and (max-width: 1200px) {
+    .section-title { font-size: 2.5rem; }
+    .hero-title { font-size: 4rem; }
+}
+
+@media screen and (max-width: 768px) {
+    .loader-logo { font-size: 2.5rem; }
+    .hero-title { font-size: 3rem; }
+    .hero-subtitle { font-size: 1.5rem; }
+    
+    .section { padding: 3rem 1rem; }
+    .glass-card { padding: 2rem; }
+    
+    .blessings-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .loader-logo { font-size: 2rem; }
+    .hero-title { font-size: 2.2rem; }
+    .hero-subtitle { font-size: 1.2rem; }
+    
+    .scene { transform: scale(0.8); }
+    .envelope-wrapper { transform: scale(0.8); }
+    .gift-box { transform: scale(0.8); }
+    
+    .timeline::after { left: 20px; }
+    .timeline-dot { left: 10px !important; }
+    .timeline-item { padding-left: 50px; }
+}

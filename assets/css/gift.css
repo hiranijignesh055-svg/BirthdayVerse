@@ -1,0 +1,172 @@
+.gift-widget {
+    perspective: 1200px;
+}
+
+.gift-box {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    animation: hoverGift 3s infinite ease-in-out;
+}
+
+@keyframes hoverGift {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-10px) scale(1.05); }
+}
+
+.gift-box:hover {
+    animation: none;
+    transform: scale(1.1) rotate(5deg);
+}
+
+.gift-body {
+    position: absolute;
+    bottom: 0;
+    width: 150px;
+    height: 110px;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    border-radius: 8px 8px 4px 4px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6), inset 0 0 20px rgba(255,255,255,0.4);
+    border: 1px solid rgba(255,255,255,0.5);
+}
+
+.gift-lid {
+    position: absolute;
+    top: 25px;
+    left: -5px;
+    width: 160px;
+    height: 35px;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    border-radius: 4px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    z-index: 2;
+    transition: transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 1s;
+    transform-origin: bottom right;
+    border: 1px solid rgba(255,255,255,0.6);
+}
+
+.gift-ribbon-v {
+    position: absolute;
+    top: 25px;
+    left: 60px;
+    width: 30px;
+    height: 125px;
+    background: linear-gradient(to right, #f6d365 0%, #fda085 100%);
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.gift-ribbon-h {
+    position: absolute;
+    top: 75px;
+    left: 0;
+    width: 150px;
+    height: 30px;
+    background: linear-gradient(to bottom, #f6d365 0%, #fda085 100%);
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.gift-bow {
+    position: absolute;
+    top: 5px;
+    left: 50px;
+    width: 50px;
+    height: 30px;
+    background: #f6d365;
+    border-radius: 50%;
+    z-index: 3;
+    transition: opacity 0.5s;
+    box-shadow: 0 0 15px rgba(246, 211, 101, 0.8);
+}
+
+.gift-glow {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 20px;
+    background: rgba(0, 242, 254, 0.8);
+    filter: blur(20px);
+    z-index: -1;
+    border-radius: 50%;
+    transition: opacity 0.5s;
+}
+
+/* Open State */
+.gift-box.open {
+    animation: none;
+    cursor: default;
+}
+
+/* Hide the box parts when opened */
+.gift-box.open .gift-body,
+.gift-box.open .gift-ribbon-v,
+.gift-box.open .gift-ribbon-h,
+.gift-box.open .gift-bow {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out 0.5s; /* Fade out after a small delay */
+}
+
+.gift-box.open .gift-lid {
+    transform: rotate(60deg) translate(80px, -50px);
+    opacity: 0;
+    transition: transform 0.5s, opacity 0.5s 0.2s;
+}
+
+.gift-box.open .gift-glow {
+    width: 300px;
+    height: 300px;
+    bottom: -50px;
+    background: rgba(255, 255, 255, 0.8);
+    filter: blur(80px);
+}
+
+.surprise-img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 20px;
+    opacity: 0;
+    transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s, opacity 1s 0.5s;
+    z-index: 10;
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.9), 0 0 100px var(--accent-pink-glow);
+    pointer-events: none;
+}
+
+.gift-box.open .surprise-img {
+    opacity: 1;
+    transform: translateX(-50%) translateY(20px) scale(1);
+    pointer-events: auto;
+}
+
+.gift-message {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    width: 250px;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--text-white);
+    text-shadow: 0 0 20px var(--accent-pink-glow), 0 0 30px var(--accent-gold);
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1s, transform 1s;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.gift-message.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}

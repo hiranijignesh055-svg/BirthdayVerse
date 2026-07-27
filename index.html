@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Dixita!</title>
+    
+    <!-- CSS Foundation -->
+    <link rel="stylesheet" href="assets/css/variables.css?v=3">
+    <link rel="stylesheet" href="assets/css/reset.css?v=3">
+    <link rel="stylesheet" href="assets/css/layout.css?v=3">
+    <link rel="stylesheet" href="assets/css/topnav.css?v=3">
+    <link rel="stylesheet" href="assets/css/pages.css?v=3">
+    
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="assets/css/loader.css?v=3">
+    <link rel="stylesheet" href="assets/css/cake.css?v=3">
+    <link rel="stylesheet" href="assets/css/letter.css?v=3">
+    <link rel="stylesheet" href="assets/css/wishes.css?v=3">
+    <link rel="stylesheet" href="assets/css/gallery.css?v=3">
+    <link rel="stylesheet" href="assets/css/gift.css?v=3">
+    <link rel="stylesheet" href="assets/css/fireworks.css?v=3">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- Phase 1: Loading Screen -->
+    <div id="loader" class="loader-container">
+        <div class="loader-content">
+            <h1 class="loader-logo">Dixita's Magical Universe</h1>
+            <div class="loader-progress-bar">
+                <div class="loader-progress" id="loader-progress"></div>
+            </div>
+            <p class="loader-text" id="loader-text">0%</p>
+            <p class="loader-countdown" id="loader-countdown">Preparing the magic...</p>
+            <button id="enter-btn" class="enter-btn hidden">Enter</button>
+        </div>
+        <canvas id="loader-particles"></canvas>
+    </div>
+
+    <!-- Main Dashboard Wrapper -->
+    <div id="app-wrapper" class="hidden">
+        
+        <!-- Background Effects -->
+        <div class="aurora-bg"></div>
+        <canvas id="hero-particles"></canvas>
+        <canvas id="fireworks-canvas"></canvas>
+
+        <!-- Top Navigation -->
+        <header class="top-nav">
+            <nav class="pill-nav">
+                <a href="#home" class="nav-item active">Home</a>
+                <a href="#wishes" class="nav-item">Wishes</a>
+                <a href="#letter" class="nav-item">Letter</a>
+                <a href="#blessings" class="nav-item">Blessings</a>
+                <a href="#surprise" class="nav-item">Surprise</a>
+            </nav>
+        </header>
+
+        <!-- Main Title -->
+        <div class="dashboard-title">
+            <h1 class="glitch-text">Happy Birthday<br><span>Dear Dixita</span></h1>
+            <p>Wishing you joy, health, success, love and unforgettable memories.</p>
+        </div>
+
+        <!-- Dashboard Elements Container -->
+        <div class="dashboard-container">
+            
+            <!-- Center: Cake -->
+            <div class="widget cake-widget" id="widget-cake" style="margin: 0 auto;">
+                <div class="scene">
+                    <div class="cake-image-container">
+                        <img src="assets/images/cake.jpg" alt="Magical Birthday Cake" class="cake-img">
+                        <div class="cake-glow"></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="footer-credit">
+            Made with ❤️
+        </div>
+        
+        <!-- ================= FULL PAGE OVERLAYS ================= -->
+        
+        <!-- Wishes Page -->
+        <div id="page-wishes" class="page-overlay hidden">
+            <div class="page-content">
+                <h2>Heartfelt Wishes</h2>
+                <div class="cards-grid">
+                    <div class="glass-message"><p>"Wishing you joy, health, and endless love."</p></div>
+                    <div class="glass-message"><p>"May your dreams shine as brightly as your smile."</p></div>
+                    <div class="glass-message"><p>"The best is yet to come. Keep smiling."</p></div>
+                    <div class="glass-message"><p>"Wishing you a year filled with wonderful surprises."</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Letter Page -->
+        <div id="page-letter" class="page-overlay hidden">
+            <div class="page-content">
+                <h2>A Special Letter</h2>
+                <div class="large-letter">
+                    <h3>Dear Dixita,</h3>
+                    <p>Happy Birthday!</p>
+                    <p>May God bless you with health, success, peace, joy, and endless happiness. It is a true blessing to celebrate this special day with you. Always remember how loved you are, today and always.</p>
+                    <p class="signature">With Love ❤️</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blessings Page -->
+        <div id="page-blessings" class="page-overlay hidden">
+            <div class="page-content">
+                <h2>Countless Blessings</h2>
+                <div class="blessings-scroll">
+                    <p>✨ May your path be illuminated with success.</p>
+                    <p>✨ May your heart always find reasons to smile.</p>
+                    <p>✨ May health and prosperity follow you everywhere.</p>
+                    <p>✨ May you achieve everything you've ever dreamed of.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Surprise Page (Full Screen Gift) -->
+        <div id="page-surprise" class="page-overlay hidden">
+            <div class="page-content">
+                <h2>A Special Surprise For You</h2>
+                <div class="large-gift-container" id="large-gift-container">
+                    <div class="gift-box" id="large-gift-box">
+                        <div class="gift-lid"></div>
+                        <div class="gift-body"></div>
+                        <div class="gift-ribbon-v"></div>
+                        <div class="gift-ribbon-h"></div>
+                        <div class="gift-bow"></div>
+                        <div class="gift-glow"></div>
+                        <img src="assets/images/teddy.jpg" class="surprise-img" alt="Surprise Teddy">
+                    </div>
+                    <div class="gift-message hidden" id="large-gift-message">
+                        <h2>Happy Birthday Dixita!</h2>
+                        <p>Enjoy your special day!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Audio -->
+        <audio id="bg-music" loop>
+            <source src="https://assets.mixkit.co/music/preview/mixkit-happy-birthday-to-you-53.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <!-- JS Foundation -->
+    <script src="js/app.js?v=3"></script>
+    <script src="js/loader.js?v=3"></script>
+    <script src="js/particles.js?v=3"></script>
+    <script src="js/cake.js?v=3"></script>
+    <script src="js/confetti.js?v=3"></script>
+    <script src="js/fireworks.js?v=3"></script>
+    <script src="js/gift.js?v=3"></script>
+</body>
+</html>

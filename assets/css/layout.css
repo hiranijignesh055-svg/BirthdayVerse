@@ -1,0 +1,160 @@
+/* Magical Dashboard Layout Update */
+body {
+    background-color: #0b0f19;
+    height: 100vh;
+    overflow: hidden; /* Prevent body scroll */
+}
+
+#app-wrapper {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    color: white;
+}
+
+/* Disneyland Background */
+.aurora-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/disneyland.jpg') center/cover no-repeat;
+    z-index: -2;
+}
+
+.aurora-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(11, 15, 25, 0.4); /* Dark overlay to make text readable */
+    z-index: -1;
+}
+
+/* Main Title */
+.dashboard-title {
+    position: absolute;
+    top: 80px; /* Below Top Nav */
+    width: 100%;
+    text-align: center;
+    z-index: 5;
+}
+
+.dashboard-title h1 {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    color: var(--accent-gold);
+    text-shadow: 0 0 20px var(--accent-gold-glow);
+    margin-bottom: 5px;
+    line-height: 1.1;
+}
+
+.dashboard-title h1 span {
+    font-size: 3rem;
+    color: white;
+    text-shadow: 0 0 15px rgba(255,255,255,0.8);
+}
+
+.dashboard-title p {
+    font-family: var(--font-main);
+    font-size: 1rem;
+    color: var(--text-white); /* Better contrast */
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    position: absolute;
+    top: 150px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 150px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1200px;
+}
+
+/* Widget Base Class */
+.widget {
+    position: absolute;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 10;
+}
+
+.widget-label {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+/* Center Cake */
+.cake-widget {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.8);
+    z-index: 5; /* Lower than popups but higher than bg */
+}
+
+/* Left Letter */
+.letter-widget {
+    top: 25%;
+    left: 10%;
+    transform: scale(0.8) rotate(-5deg);
+}
+.letter-widget:hover {
+    transform: scale(0.9) rotate(0deg);
+    z-index: 20;
+}
+
+/* Bottom Left Gallery */
+.gallery-widget {
+    bottom: 10%;
+    left: 12%;
+    transform: scale(0.85);
+}
+.gallery-widget:hover {
+    transform: scale(0.95);
+    z-index: 20;
+}
+
+/* Right Glass Messages */
+.wishes-widget {
+    top: 20%;
+    right: 8%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Bottom Right Gift */
+.gift-widget {
+    bottom: 10%;
+    right: 15%;
+    transform: scale(0.8);
+}
+.gift-widget:hover {
+    transform: scale(0.9);
+    z-index: 20;
+}
+
+.footer-credit {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    z-index: 50;
+}
+
+/* Hide unused classes from previous iterations securely */
+.hidden { display: none !important; }
