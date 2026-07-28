@@ -1,31 +1,140 @@
-@media screen and (max-width: 1200px) {
-    .section-title { font-size: 2.5rem; }
-    .hero-title { font-size: 4rem; }
+/* Responsive adjustments for Dashboard Architecture */
+
+@media screen and (max-width: 1024px) {
+    .dashboard-title h1 {
+        font-size: 3.5rem;
+    }
+    .dashboard-title h1 span {
+        font-size: 2.5rem;
+    }
+    .cake-widget {
+        transform: translate(-50%, -50%) scale(1.5);
+    }
 }
 
 @media screen and (max-width: 768px) {
-    .loader-logo { font-size: 2.5rem; }
-    .hero-title { font-size: 3rem; }
-    .hero-subtitle { font-size: 1.5rem; }
+    /* Top Nav */
+    .pill-nav {
+        gap: 10px;
+        padding: 10px 15px;
+    }
+    .nav-item {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
     
-    .section { padding: 3rem 1rem; }
-    .glass-card { padding: 2rem; }
+    /* Main Title */
+    .dashboard-title h1 {
+        font-size: 2.8rem;
+    }
+    .dashboard-title h1 span {
+        font-size: 2rem;
+    }
+    .dashboard-title p {
+        font-size: 0.9rem;
+        padding: 0 20px;
+    }
+
+    /* Cake Widget */
+    .cake-widget {
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+
+    /* Pages Overlays */
+    .page-content {
+        padding: 20px;
+        width: 95%;
+    }
+    .page-content h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
     
-    .blessings-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    /* Wishes */
+    .cards-grid .glass-message {
+        width: 100%;
+        max-width: 350px;
+        min-height: 120px;
+    }
+
+    /* Letter */
+    .large-letter {
+        padding: 30px 20px;
+    }
+    .large-letter h3 {
+        font-size: 2rem;
+    }
+    .large-letter p {
+        font-size: 1.1rem;
+    }
+    
+    /* Surprise Gift */
+    #large-gift-box {
+        transform: scale(0.8);
+    }
+    .surprise-img {
+        max-width: 250px;
     }
 }
 
 @media screen and (max-width: 480px) {
-    .loader-logo { font-size: 2rem; }
-    .hero-title { font-size: 2.2rem; }
-    .hero-subtitle { font-size: 1.2rem; }
+    /* Top Nav (Mobile) */
+    .top-nav {
+        top: 10px;
+    }
+    .pill-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+        border-radius: 15px;
+    }
+    .nav-item {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
     
-    .scene { transform: scale(0.8); }
-    .envelope-wrapper { transform: scale(0.8); }
-    .gift-box { transform: scale(0.8); }
+    /* Main Title */
+    .dashboard-title {
+        top: 120px; /* Push down to make room for wrapped nav */
+    }
+    .dashboard-title h1 {
+        font-size: 2.2rem;
+    }
+    .dashboard-title h1 span {
+        font-size: 1.5rem;
+    }
     
-    .timeline::after { left: 20px; }
-    .timeline-dot { left: 10px !important; }
-    .timeline-item { padding-left: 50px; }
+    /* Cake Widget */
+    .cake-widget {
+        transform: translate(-50%, -50%) scale(0.8);
+        top: 55%; /* Move down slightly */
+    }
+
+    /* Pages Overlays */
+    .page-content h2 {
+        font-size: 2rem;
+    }
+    
+    /* Letter */
+    .large-letter {
+        padding: 20px 15px;
+        width: 100%;
+    }
+    
+    /* Surprise Gift */
+    #large-gift-box {
+        transform: scale(0.6);
+    }
+    .surprise-img {
+        max-width: 200px;
+    }
+    
+    /* Blessings */
+    .blessings-scroll {
+        max-height: 50vh;
+    }
+    .blessings-scroll p {
+        font-size: 1rem;
+        padding: 12px;
+    }
 }
